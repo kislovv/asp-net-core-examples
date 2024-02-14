@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCExample", "IoCExample\IoCExample.csproj", "{C815A57F-B5E7-49F3-8B31-8DF7BCB3ADAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pipeline", "Pipeline\Pipeline.csproj", "{7EC07B1B-E910-4F1A-ACF7-EC8133833BFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C815A57F-B5E7-49F3-8B31-8DF7BCB3ADAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C815A57F-B5E7-49F3-8B31-8DF7BCB3ADAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C815A57F-B5E7-49F3-8B31-8DF7BCB3ADAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C815A57F-B5E7-49F3-8B31-8DF7BCB3ADAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC07B1B-E910-4F1A-ACF7-EC8133833BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC07B1B-E910-4F1A-ACF7-EC8133833BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC07B1B-E910-4F1A-ACF7-EC8133833BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC07B1B-E910-4F1A-ACF7-EC8133833BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
