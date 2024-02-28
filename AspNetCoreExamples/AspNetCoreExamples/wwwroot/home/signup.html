@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="common.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script defer src="registration.js"></script>
+</head>
+<body>
+<div class="container">
+    <main class="content">
+        <div class="container">
+            <h3 class="align-content-md-center">Вас приветствует какой то непонятный сайт. не знаю как вы здесь оказались, но тут вы можете зарегестрироваться</h3>
+            <form id="userForm">
+                <label>Email:  <input type="text" id="email" name="email" class="form-control" required="Поле обязательно к заполнению!"></label><br>
+                <label>Password:  <input type="password" id="psw" name="password" class="form-control" pattern="(?" =.*\d)(? =.*[a-z])(? =.*[A-Z]).{8,}" title="Минимум 8 символов, одна прописная, одна заглавная буква и специальный символ!" required></label><br>
+                <label>Full Name: <input type="text" id="fullName" name="fullName" class="form-control"></label><br>
+                <input type="submit" id="saveUser" class="btn btn-success" value="Зарегестрироваться" /><br>
+            </form>
+            <br>
+            <p id="letter" class="invalid"><b>Должны содержать строчные буквы</b></p>
+            <p id="capital" class="invalid"><b>Должны содержать прописные буквы</b></p>
+            <p id="number" class="invalid"><b>Должно быть число в пароле</b></p>
+            <p id="length" class="invalid"><b>Минимум 8 символов</b></p>
+            <p id="successPassword"></p>
+            <div id="resultMessage"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        &copy; Copyright Mr. Camel
+    </footer>
+</div>
+</body>
+</html>
