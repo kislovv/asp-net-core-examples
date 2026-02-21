@@ -9,4 +9,6 @@ public interface IEventRepository
     /// </summary>
     /// <returns>Список активных мероприятий</returns>
     public Task<List<Event>> GetAllEvents();
+    
+    public Task<Event> AddEvent(Event ev);
 }

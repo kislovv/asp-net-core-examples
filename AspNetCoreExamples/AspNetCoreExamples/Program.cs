@@ -2,6 +2,7 @@ using AspNetCoreExamples;
 using AspNetCoreExamples.Abstractions;
 using AspNetCoreExamples.Configurations.Mapping;
 using AspNetCoreExamples.DataBase;
+using AspNetCoreExamples.Entities;
 using AspNetCoreExamples.Models;
 using AspNetCoreExamples.Services;
 using AutoMapper;
@@ -33,8 +34,34 @@ app.MapGet("events/all",
 {
     var result = await eventService.GetAllActiveEvents();
     
-    return mapper.Map<List<Event>>(result);
+    return result.Select(x => new EventResult
+    {
+        Id = x.Id,
+        Name = x.Name,
+        Place =  x.Place,
+    });
 });
+
+app.MapPost("events/new",
+    async ([FromServices] IEventService eventService, 
+        CreateEventRequest request) =>
+    {
+        var result = await eventService.RegisterNewEvent(new Event
+        {
+            Name = request.Name,
+            Place = request.Place,
+            EndedAt = request.EndedAt,
+            StartedAt = request.StartedAt,
+            Quota = request.Quota,
+        });
+    
+        return new EventResult
+        {
+            Id = result.Id,
+            Place =  result.Place,
+            Name = result.Name,
+        };
+    });
 
 
 app.Run();

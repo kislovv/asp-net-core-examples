@@ -1,8 +1,7 @@
-﻿namespace AspNetCoreExamples.Entities;
+﻿namespace AspNetCoreExamples.Models;
 
-public class Event
+public class CreateEventRequest
 {
-    public long Id { get; set; }
     public string Name { get; set; } = null!;
     public string Place { get; set; } = null!;
     public DateTimeOffset StartedAt { get; set; }

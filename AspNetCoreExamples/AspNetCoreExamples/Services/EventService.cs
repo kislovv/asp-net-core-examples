@@ -14,8 +14,9 @@ public class EventService(IEventRepository eventRepository) : IEventService
             .ToList();
     }
 
-    public async Task<bool> RegisterNewEvent(Event ev)
+    public async Task<Event> RegisterNewEvent(Event ev)
     {
-        throw new NotImplementedException();
+        var result = await eventRepository.AddEvent(ev);
+        return result;
     }
 }

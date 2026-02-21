@@ -3,7 +3,6 @@ using AspNetCoreExamples.Entities;
 using AspNetCoreExamples.Services;
 using AutoFixture;
 using Moq;
-using XunitShouldExtension;
 
 namespace AspNetExampleUnitTests;
 
@@ -31,6 +30,6 @@ public class EventServiceTests
 	
         var result = await eventService.GetAllActiveEvents();
         
-        result.ShouldNotContain(events[0]);
+        Assert.DoesNotContain(events[0], result);
     }
 }

@@ -5,6 +5,8 @@ namespace AspNetCoreExamples.DataBase;
 
 public class FakeEventRepository : IEventRepository
 {
+    private int _idSequence = 4;
+    private readonly object _locker = new object();
     private readonly List<Event> _events =
     [
         new Event
@@ -40,6 +42,20 @@ public class FakeEventRepository : IEventRepository
 
     public Task<List<Event>> GetAllEvents()
     {
-        return Task.FromResult(_events);
+        lock (_locker)
+        {
+            return Task.FromResult(_events);
+        }
+    }
+
+    public Task<Event> AddEvent(Event ev)
+    {
+        lock (_locker)
+        {
+            ev.Id = _idSequence++;
+            _events.Add(ev); 
+        }
+        
+        return Task.FromResult(ev);
     }
 }

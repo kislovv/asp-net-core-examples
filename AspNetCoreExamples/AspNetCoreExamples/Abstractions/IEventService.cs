@@ -15,6 +15,6 @@ public interface IEventService
     /// </summary>
     /// <param name="ev">Мероприятие которое пытаются добавить в список активных</param>
     /// <returns>успешность операции</returns>
-    public Task<bool> RegisterNewEvent(Event ev);
+    public Task<Event> RegisterNewEvent(Event ev);
 
 }

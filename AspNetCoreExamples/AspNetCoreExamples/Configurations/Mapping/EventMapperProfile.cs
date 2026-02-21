@@ -7,6 +7,6 @@ public class EventMapperProfile : Profile
 {
     public EventMapperProfile()
     {
-        CreateMap<Models.Event, Event>().ReverseMap();
+        CreateMap<Models.EventResult, Event>().ReverseMap();
     }
 }

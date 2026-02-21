@@ -2,7 +2,7 @@
 
 public class WeatherResult
 {
-    public Main Main { get; set; }
+    public required Main Main { get; set; }
 }
 
 public class Main
